@@ -1,0 +1,61 @@
+﻿@model IEnumerable<PivotTableinMVCCore.Models.Invoice>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CostCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Period)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostCategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Period)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.InvoiceNumber">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.InvoiceNumber">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.InvoiceNumber">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<div class="container">
+    <div>
+        <input type="button" class="btn btn-info" value="Export to Excel" />
+    </div>
+
+    <div id="PivotOutput" style="margin:30px;">
+
+    </div>
+</div>
+
+
+ 
+    <script src="~/js/aslam.js"></script>
