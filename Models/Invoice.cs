@@ -13,6 +13,8 @@ namespace PivotTableinMVCCore.Models
         public double Amount { get; set; }
         public string CostCategory { get; set; }
         public string Period { get; set; }
+
+        public string Resource { get; set; }
     }
 }
 

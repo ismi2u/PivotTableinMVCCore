@@ -14,14 +14,20 @@ namespace PivotTableinMVCCore.Controllers
         private readonly InvoiceContext _context;
 
         public List<Invoice> InvoiceList;
+        public List<Capacity> CapacitiesList;
 
         public InvoiceController(InvoiceContext context)
         {
             _context = context;
         }
 
+        public JsonResult GetCapacityData()
+        {
+            CapacitiesList = _context.Capacities.ToList();
 
-  
+            return new JsonResult(CapacitiesList);
+        }
+
         public JsonResult GetInvoiceData()
        {
             InvoiceList = _context.GetInvoices.ToList();

@@ -15,6 +15,8 @@ namespace PivotTableinMVCCore.Models
 
        public DbSet<Invoice> GetInvoices { get; set; }
 
+        public DbSet<Capacity> Capacities { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

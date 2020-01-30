@@ -21,6 +21,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.Period)
             </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Resource)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -35,6 +39,10 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Period)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Resource)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.InvoiceNumber">Edit</a> |
@@ -58,4 +66,4 @@
 
 
  
-    <script src="~/js/aslam.js"></script>
+    <script src="~/js/Capac.js"></script>
